@@ -63,8 +63,7 @@ updateInfo(newInfo);
   return (
     <div className='SearchBox'>
       <h3>
-        Search for the weather. Enter the city name and country code separated
-        by a comma.
+        Enter the city name below to get the weather information
       </h3>
       <form onSubmit={handleSubmit}>
         <TextField id="city" label="City Name" variant="outlined" value={city}  onChange={handleChange} required />
