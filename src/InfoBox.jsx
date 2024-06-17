@@ -4,6 +4,11 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import myImage from './assets/weather.jpg';
+import snow from './assets/snow.jpg';
+import rain from './assets/rain.jpg';
+import AcUnitIcon from "@mui/icons-material/AcUnit";
+import WbSunnyIcon from "@mui/icons-material/WbSunny";
+import ThunderstormIcon from "@mui/icons-material/Thunderstorm";
 import './InfoBox.css';
 
 const InfoBox = ({info}) => {
@@ -20,16 +25,23 @@ const InfoBox = ({info}) => {
 
   return (
     <div className="InfoBox">
-      <div className='container'>
+      <div className="container">
         <Card sx={{ maxWidth: 345 }}>
           <CardMedia
             sx={{ height: 140 }}
-            image={myImage}
+            image={info.humidity > 80 ? rain : info.temp > 15 ? myImage : snow}
             title="green iguana"
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              {info.city}
+              {info.city}{
+              info.humidity > 80 
+              ? <ThunderstormIcon /> 
+              : info.temp 
+              > 15 
+              ? <WbSunnyIcon />
+              : <AcUnitIcon />
+              }
             </Typography>
             <Typography
               variant="body2"
