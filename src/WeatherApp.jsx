@@ -7,7 +7,7 @@ const WeatherApp = () => {
     const[weatherInfo, setWeatherInfo] = useState({
         city:'kobe',  
         feelsLike: 32.97,
-        humidity: 94,
+        humidity: 44,
         temp: 27.56,
         tempMax: 27.77,
         tempMin: 26.34,

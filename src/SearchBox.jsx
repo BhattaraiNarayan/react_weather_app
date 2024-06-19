@@ -14,9 +14,7 @@ const API_KEY = "0f36c3a0ab524158acc6ffd15ef23a6a";
 
 const getWeather = async () => {
 
-try {
-
-   const response = await fetch(
+const response = await fetch(
         `${API_URL}?q=${city}&appid=${API_KEY}&units=metric`
     );
     const data = await response.json();
@@ -34,10 +32,6 @@ try {
     console.log(result);
     return result;
 }
-catch (error) {
-  throw error;
-}
-};
 
 let handleChange=(e)=>{
     setCity(e.target.value);
@@ -47,10 +41,10 @@ let handleSubmit=async(e)=>{
 
 try {
 
-  e.preventDefault();
+e.preventDefault();
 console.log(city);
- getWeather(city); 
- setCity("");
+getWeather(city); 
+setCity("");
 let newInfo = await getWeather();
 updateInfo(newInfo);
 
