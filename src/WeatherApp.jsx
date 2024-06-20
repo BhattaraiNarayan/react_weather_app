@@ -21,7 +21,7 @@ const WeatherApp = () => {
 
 
     return (
-    <div style={{textAlign:"center"}}>
+    <div style={{textAlign:"center", backgroundColor:'smoke', height:'800px'}}>
       <h1>Weather App by Narayan</h1>
       <SearchBox updateInfo={updateInfo}/>
       <InfoBox info={weatherInfo}/>
