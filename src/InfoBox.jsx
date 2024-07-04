@@ -34,26 +34,28 @@ const InfoBox = ({info}) => {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              {info.city}{
-              info.humidity > 80 
-              ? <ThunderstormIcon /> 
-              : info.temp 
-              > 15 
-              ? <WbSunnyIcon />
-              : <AcUnitIcon />
-              }
+              {info.city}
+              {info.humidity > 80 ? (
+                <ThunderstormIcon />
+              ) : info.temp > 15 ? (
+                <WbSunnyIcon />
+              ) : (
+                <AcUnitIcon />
+              )}
             </Typography>
             <Typography
-              variant="body2"
+              variant="h6"
               color="text.secondary"
               component={"span"}
             >
-              <p>Temperature={info.temp}&deg;C</p>
-              <p>Humidity={info.humidity}</p>
-              <p>Min Temp={info.tempMin}&deg;C</p>
-              <p>Max Temp={info.tempMax}&deg;C</p>
+              <p style={{ fontWeight: "bold"}}>
+                Temperature:&nbsp;&nbsp;{info.temp}&deg;C
+              </p>
+              <p>Humidity:&nbsp;&nbsp;{info.humidity}</p>
+              <p>Min Temp:&nbsp;&nbsp;{info.tempMin}&deg;C</p>
+              <p>Max Temp:&nbsp;&nbsp;{info.tempMax}&deg;C</p>
               <p>
-                The weather is described as feels like&nbsp;{info.feelsLike}
+                The weather feels like&nbsp;{info.feelsLike}
                 &deg;C
               </p>
             </Typography>
